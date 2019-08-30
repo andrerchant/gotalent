@@ -1,0 +1,18 @@
+label.search{
+    @include flex-parent(row,center,space-around);
+    border-radius: 20px;
+    border: 1px solid var(--disabled);
+    cursor: pointer;
+    overflow: hidden;
+
+    .material-icons{
+        color:var(--disabled);
+        font-size: 1rem;
+        margin-left: 0.3rem;
+    }
+    input[type="search"]{
+        border: none;
+        cursor: pointer;
+        height: 1.5rem;
+    }
+}

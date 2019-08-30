@@ -1,3 +1,88 @@
-<p>
-  history works!
-</p>
+<main class="history">
+  <header>
+    <h2>Directorio de empresas</h2>
+    <button class="add">Agregar empresa</button>
+  </header>
+  
+  <section>
+    <div class="title">
+      <div class="title-general">
+        <h4>Empresas</h4>
+        <span class="count">500</span>
+      </div>
+      <div class="title-options">
+        Ordenar por:
+        <a href="#">Empresa</a> | 
+        <a href="#">Administrador</a>
+      </div>
+    </div>
+  
+    <div class="list">
+  
+      <header class="list-head">
+        <span class="index">1 - 10 de 230</span>
+        <button> l </button>
+        <button> r </button>
+      </header>
+  
+      <div class="list-tools">
+        <label for="search-input" class="search">
+          <i class="material-icons">search</i>
+          <input id="search-input" type="search">
+        </label>
+        <ul>
+          <li> <i class="material-icons">star</i> </li>
+          <li *ngFor="let number of numbers, let i = index"> {{ getNextLetter(i) | uppercase }} </li>
+        </ul>
+      </div>
+  
+      <div class="list-container">
+  
+        <article class="company">
+          <figure> icon </figure>
+  
+          <div class="company-names">
+            <span class="company-names-sociery">
+              Circulo de credito
+            </span>
+            <span class="company-names-manager">
+              Julia de la Cruz
+            </span>
+          </div>
+  
+          <div class="company-date">
+            <small>Fecha de registro</small>
+            <span>24 de Ene</span>
+          </div>
+  
+          <div class="company-users">
+            <span> 150 </span>
+            <small>usuarios</small>
+          </div>
+  
+          <div class="company-artciles">
+            <span> 200 </span>
+            <small>publicaciones</small>
+          </div>
+  
+          <div class="company-credit">
+            <span> unlimited </span>
+            <small>créditos</small>
+          </div>
+  
+        </article>
+  
+      </div>
+  
+      <footer class="list-head">
+        <span class="index">1 - 10 de 230</span>
+        <button> l </button>
+        <button> r </button>
+      </footer>
+  
+    </div>
+  
+  
+  </section>
+      
+</main>

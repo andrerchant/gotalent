@@ -1,3 +1,13 @@
+button.add{
+    background: var(--white);
+    border-radius: 40px;
+    padding: 0.3rem 1.2rem;
+    border: 1px solid var(--disabled);
+    &:hover{
+        background: var(--higray);
+    }
+}
+
 .menu_btn{
     @include flex-parent(column,center,space-around);
     @include float(1.4rem,unset,unset,23px);

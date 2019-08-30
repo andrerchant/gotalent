@@ -6,9 +6,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
+  numbers = Array(26).fill(1);
 
   ngOnInit() {
+  }
+
+  getNextLetter(increment: number) {
+    let code = increment + 97;
+    return String.fromCharCode(code);
   }
 
 }
