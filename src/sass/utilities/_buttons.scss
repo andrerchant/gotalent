@@ -1,0 +1,47 @@
+.menu_btn{
+    @include flex-parent(column,center,space-around);
+    @include float(1.4rem,unset,unset,23px);
+    cursor: pointer;
+    height: 1.2rem;
+    width: 1rem;
+    z-index: 9;
+    transition: transform ease .3s;
+    transform: translateX(0px) scaleX(1.2);
+
+    &.opened{
+        transform: translateX(200px) scaleX(1);
+    }
+
+    .stroke{
+        background: var(--white);
+        height: .063rem;
+        width: 100%;
+
+        &:first-child{
+            border-radius: 30% 30% 0% 0%;
+        }
+
+        &:last-child{
+            border-radius: 0% 0% 30% 30%;
+        }
+    }
+}
+
+.svg-btn{
+    color: var(--white);
+    cursor: pointer;
+    
+    &:last-child{
+        margin: 1.55rem;
+    }
+    svg{
+        height: 1.4rem;
+        width: 1.5rem;
+
+        path{
+            fill:none;
+            stroke: var(--white);
+            stroke-width: 1.5rem;
+        }
+    }
+}

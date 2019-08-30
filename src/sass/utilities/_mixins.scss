@@ -1,0 +1,15 @@
+@mixin flex-parent($flow,$c-align,$v-align){
+    display: flex;
+    flex-flow:$flow;
+    align-items: $c-align;
+    justify-content: $v-align;
+}
+
+@mixin float($top,$right,$down,$left){
+    position: absolute;
+    top:$top;
+    right:$right;
+    bottom:$down;
+    left:$left;
+    z-index: 2;
+}

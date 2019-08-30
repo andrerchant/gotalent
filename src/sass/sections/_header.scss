@@ -1,0 +1,6 @@
+main.header{
+    @include flex-parent(row,center,flex-end);
+    background: linear-gradient(0.25turn, var(--strongBlue), var(--middleCold), var(--strongPurple));
+    height: 4.1rem;
+    width: 100%;
+}

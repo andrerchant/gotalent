@@ -1,0 +1,12 @@
+@import "mixins";
+@import "_extends";
+@import "_breakpoints";
+@import "_buttons";
+@import "_inputs";
+
+.row{
+    @include flex-parent(row,center,center);
+}
+.col{
+    @include flex-parent(column,center,center);
+}

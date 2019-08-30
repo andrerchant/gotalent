@@ -1,0 +1,12 @@
+<app-menu [menuStatus]="toggleMenu"></app-menu>
+<div class="menu_btn" (click)="switchMenu()" [ngClass]="{opened: toggleMenu}">
+    <span class="stroke"></span>
+    <span class="stroke"></span>
+    <span class="stroke"></span>
+</div>
+<div>
+  <main class="home" [ngClass]="{offset:toggleMenu}">
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+  </main>
+</div>
