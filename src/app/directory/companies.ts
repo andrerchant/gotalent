@@ -1,5 +1,6 @@
 export interface Companies {
     id:number,
+    filename?:string,
     company:string,
     managment:string,
     date:number|string,

@@ -1,0 +1,13 @@
+/* Break points
+------------------------*/
+$xs-device: 360px;
+$sm-device: 768px;
+$tb-device: 1024px;
+
+$xs-and-below: "max-width: #{$xs-device - 1px}";
+$sm-and-below: "max-width: #{$sm-device - 1px}";
+$tb-and-below: "max-width: #{$tb-device - 1px}";
+
+$xs-and-above: "min-width: #{$xs-device}";
+$sm-and-above: "min-width: #{$sm-device}";
+$tb-and-above: "min-width: #{$tb-device}";

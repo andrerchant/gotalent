@@ -4,6 +4,8 @@ main.home{
     transition: transform ease .3s;
 
     &.offset{
-        transform: translateX(264px);
+        @media screen and ($sm-and-above){
+            transform: translateX(264px);
+        }
     }
 }

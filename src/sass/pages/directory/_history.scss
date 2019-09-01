@@ -1,9 +1,14 @@
 main.history{
     @include flex-parent(column,stretch,flex-start);
+    min-height: 91.68vh;
+
     & > header{
         @include flex-parent(row,center,flex-start);
         background: var(--lowgray);
         border-bottom: 1px solid var(--disabled);
+        @media screen and ($sm-and-below){
+            display: none;
+        }
 
         h2{
             font-size: 1.1rem;
@@ -14,11 +19,21 @@ main.history{
         }
     }
 
+    .index{
+        font-size: 0.75rem;
+        margin-right: 1.1rem;
+    }
+
     & > section{
-        margin: 0.2rem 1.7rem;
+        @media screen and ($sm-and-above){
+            margin: 0.2rem 1.7rem;
+        }
         .title{
             @include flex-parent(row,center,space-between);
             height: 3.7rem;
+            @media screen and ($sm-and-below){
+                display: none;
+            }
 
             &-general,&-options{
                 @include flex-parent(row,center,space-around);
@@ -37,23 +52,43 @@ main.history{
                 }
 
                 a{
-                    text-decoration: none;
                     color: var(--softPurple);
+                    margin: 0 0.24rem;
+                    text-decoration: none;
                     &:hover,&.selected{
                         color: var(--purple);
                     }
                 }
+            }
+            &-options{
+                font-size: 0.88rem;
+                letter-spacing: -0.1px;
             }
         }
         
         .list{
             @include flex-parent(column,stretch,flex-start);
             background: var(--white);
+            @media screen and ($sm-and-below){
+                background: transparent;
+            }
+
+            &-container{
+                @media screen and ($sm-and-below){
+                    max-width: 24rem;
+                    margin: auto;
+                }
+            }
 
             &-head{
                 @include flex-parent(row,center,flex-end);
+                padding: 0.5rem 0.9rem;
+                @media screen and ($sm-and-below){
+                    display: none;
+                }
                 &:first-child{
                     background: var(--purple);
+                    color: white;
                     border-radius: 4px 4px 0 0;
                     height: 2.8rem;
                 }
@@ -61,21 +96,98 @@ main.history{
             &-tools{
                 @include flex-parent(row,center,space-around);
                 margin: 0 2rem;
+                overflow: hidden;
                 label.search{
                     flex: 1 1 100%;
                     justify-content: unset;
                 }
                 &>ul{
                     @include flex-parent(row,center,space-around);
+                    color: var(--disabled);
                     flex: 2 1 100%;
                     list-style: none;
-                    color: var(--disabled);
+                    margin: 0.4rem 0;
+                    @media screen and ($sm-and-below){
+                        @include float(6rem, 0px, unset, unset);
+                        @include flex-parent(column,center,flex-start);
+                    }
+                    
+                    li{
+                        cursor: pointer;
+                        font-size: 0.8rem;
+                        margin: 0 0.35rem;
+                        &:hover,.selected{
+                            color:var(--bold);
+                        }
+                    }
                 }
             }
 
             .company{
                 @include flex-parent(row,center,space-around);
+                border-left: none;
+                border-right: none;
+                padding: 0.9rem 0;
+                @media screen and ($sm-and-below){
+                    border-bottom:1px solid #dee2ea;
+                    margin-right: 1.8rem;
+                }
+
+                &:hover{
+                    background:var(--higray);
+                }
+
+                & > figure{
+                    @media screen and ($sm-and-below){
+                        margin: 0 0.3rem;
+                        img{ width: 3rem!important;}
+                    }
+                    img{
+                        width: 2rem;
+                    }
+                }
+
+                & > div{
+                    @include flex-parent(column,center,space-around);
+                    flex: 1 1 2rem;
+                    &:not(.company-names){
+                        @media screen and ($sm-and-below){
+                            display: none;
+                        }
+                    }
+                    small {
+                        font-size: 0.65rem;
+                    }
+                }
+                &-names{
+                    flex: 2 1 2rem !important;
+                    align-items: baseline !important;
+                    &-manager{
+                        font-size: 0.86rem;
+                        font-weight: 100;
+                    }
+                }
+                &-blank{
+                    flex:1.5 1 2rem !important;
+                    @media screen and ($sm-and-below){
+                        display: none;
+                    }
+                }
             }
+        }
+    }
+    footer.mobile{
+        background: #233239;
+        color: white;
+        font-size: 2.1rem;
+        height: 4.5rem;
+        letter-spacing: 1.5rem;
+        line-height: 66px;
+        overflow: hidden;
+        padding-left: 1.6rem;
+
+        @media screen and ($sm-and-above){
+            display: none;
         }
     }
 }

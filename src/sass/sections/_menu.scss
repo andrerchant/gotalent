@@ -8,9 +8,18 @@
     left: -264px;
     width: 264px;
     transition: transform ease .3s;
+    z-index: 5;
+
+    @media screen and ($sm-and-below){
+        width: 100vw;
+        left: -100vw;
+    }
 
     &.showMenu{
         transform: translateX(264px);
+        @media screen and ($sm-and-below){
+            transform: translateX(100vw);
+        }
     }
 
     h1{

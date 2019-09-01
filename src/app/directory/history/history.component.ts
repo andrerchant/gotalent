@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CompaniesService } from '../companies.service';
+import { Companies } from '../companies';
 
 @Component({
   selector: 'app-history',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
-  constructor() {
+  constructor(
+    private _companiesService : CompaniesService
+  ) {
   }
+  companies:Companies[] = this._companiesService.companies;
   numbers = Array(26).fill(1);
 
   ngOnInit() {

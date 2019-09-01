@@ -21,8 +21,8 @@
   
       <header class="list-head">
         <span class="index">1 - 10 de 230</span>
-        <button> l </button>
-        <button> r </button>
+        <button class="arrow"> <i class="material-icons"> keyboard_arrow_left </i> </button>
+        <button class="arrow"> <i class="material-icons"> keyboard_arrow_right </i> </button>
       </header>
   
       <div class="list-tools">
@@ -38,15 +38,17 @@
   
       <div class="list-container">
   
-        <article class="company">
-          <figure> icon </figure>
+        <article class="company" *ngFor="let company of companies">
+          
+          <figure *ngIf="company.filename !== ''"> <img [attr.src]="'./assets/'+company.filename" alt="logotipo"> </figure>
+          <figure *ngIf="company.filename == ''"> <img src="./assets/empty.png" alt="logotipo"> </figure>
   
           <div class="company-names">
-            <span class="company-names-sociery">
-              Circulo de credito
+            <span class="company-names-society">
+              {{company?.company}}
             </span>
             <span class="company-names-manager">
-              Julia de la Cruz
+              {{company?.managment}}
             </span>
           </div>
   
@@ -54,19 +56,21 @@
             <small>Fecha de registro</small>
             <span>24 de Ene</span>
           </div>
+
+          <div class="company-blank"></div>
   
           <div class="company-users">
-            <span> 150 </span>
+            <span> {{company?.users}} </span>
             <small>usuarios</small>
           </div>
   
           <div class="company-artciles">
-            <span> 200 </span>
+            <span> {{company?.articles}} </span>
             <small>publicaciones</small>
           </div>
   
           <div class="company-credit">
-            <span> unlimited </span>
+            <span> {{ company?.credits_limit ? 'limited' : 'unlimited' }} </span>
             <small>créditos</small>
           </div>
   
@@ -76,13 +80,19 @@
   
       <footer class="list-head">
         <span class="index">1 - 10 de 230</span>
-        <button> l </button>
-        <button> r </button>
+        <button class="arrow dark"> <i class="material-icons"> keyboard_arrow_left </i> </button>
+        <button class="arrow dark"> <i class="material-icons"> keyboard_arrow_right </i> </button>
       </footer>
+
+      <button class="add-mobile"> <i class="material-icons">add</i> </button>
   
     </div>
   
   
   </section>
+
+  <footer class="mobile">
+    E A R C
+  </footer>
       
 </main>

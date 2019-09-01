@@ -1,9 +1,26 @@
 label.search{
     @include flex-parent(row,center,space-around);
+    background: white;
     border-radius: 20px;
     border: 1px solid var(--disabled);
     cursor: pointer;
+    min-width: 26px;
     overflow: hidden;
+    position: relative;
+
+    @media screen and ($sm-and-below){
+        border: none;
+        box-shadow: 0px 0px 7px -3px #566075ab;
+        height: 2.4rem;
+        max-width: 19rem;
+        margin: 1.1rem;
+        right: 2px;
+        .material-icons{
+            color: var(--bold);
+            font-size: 1.1rem;
+            position: absolute;
+        }
+    }
 
     .material-icons{
         color:var(--disabled);
@@ -14,5 +31,6 @@ label.search{
         border: none;
         cursor: pointer;
         height: 1.5rem;
+        width: 100%;
     }
 }

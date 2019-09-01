@@ -3,4 +3,11 @@ main.header{
     background: linear-gradient(0.25turn, var(--strongBlue), var(--middleCold), var(--strongPurple));
     height: 4.1rem;
     width: 100%;
+
+    @media screen and ($sm-and-below){
+        height: 4.3rem;
+        .svg-btn:not(.gear){
+            display: none;
+        }
+    }
 }
